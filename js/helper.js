@@ -42,7 +42,7 @@ var HTMLprojectStart = '<div class="project-entry"></div>';
 var HTMLprojectTitle = '<a href="#">%data%</a>';
 var HTMLprojectDates = '<div class="date-text">%data%</div>';
 var HTMLprojectDescription = '<p><br>%data%</p>';
-var HTMLprojectImage = '<img src="%data%" alt="Snapshot of my responsive images project">';
+var HTMLprojectImage = '<img src="%data%" alt="Snapshot of my responsive images project.">';
 
 var HTMLschoolStart = '<div class="education-entry"></div>';
 var HTMLschoolName = '<a href="#">%data%';
@@ -51,11 +51,15 @@ var HTMLschoolDates = '<div class="date-text">%data%</div>';
 var HTMLschoolLocation = '<div class="location-text">%data%</div>';
 var HTMLschoolMajor = '<em><br>Major: %data%</em>';
 
-var HTMLonlineClasses = '<h3>Online Classes</h3>';
+var HTMLonlineClassStart = '<div class="class-entry"><h3>Online Classes</h3><a href="#">MORE</a></div>';
 var HTMLonlineTitle = '<a href="#">%data%';
 var HTMLonlineSchool = ' - %data%</a>';
 var HTMLonlineDates = '<div class="date-text">%data%</div>';
-var HTMLonlineURL = '<br><a href="#">%data%</a>';
+
+var HTMLcertificateStart = '<div class="cert-entry"><h3>Certifications</h3></div>';
+var HTMLcertTitle = '<a href="#">%data%</a>';
+var HTMLcertDates = '<div class="date-text">%data%</div>';
+var HTMLcertImage = '<img src="%data%" alt=Sapshot of my certification.'
 
 var internationalizeButton = '<button>Internationalize</button>';
 var googleMap = '<div id="map"></div>';

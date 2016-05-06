@@ -24,17 +24,17 @@ var bio = {
 var work = {
 	"jobs" : [
 		{
-		"employer" : "Self",
-		"title" : "Uber Partner",
-		"dates" : "2014 - Future",
-		"location" : "Miami, Fl",
-		"description" : "Driving personal vehichle for hire."
+		"employer" :  "",
+		"title" : "",
+		"dates" : "",
+		"location" : "",
+		"description" : ""
 		},{
-		"employer" : "Self",
-		"title" : "Lyft Partner",
-		"dates" : "2014 - Future",
-		"location" : "Miami, Fl",
-		"description" : "Driving personal vehichle for hire."
+		"employer" : "",
+		"title" : "",
+		"dates" : "",
+		"location" : "",
+		"description" : ""
 		}
 	],
 	"display" : "A function that displays the work section. It takes no parameters"
@@ -66,7 +66,7 @@ var education = {
     	{
          "name" : "City College Of New York",
          "location" : "New York",
-         "degree": "No degree",
+         "degree": "N/A",
          "majors": ["Computer Science"],
          "dates": "2010",
          "url" : "https://www.ccny.cuny.edu/"
@@ -76,7 +76,7 @@ var education = {
     	{
          "title": "JavaScript Basics",
          "school" : "Udacity",
-         "dates" : "2016",	
+         "dates" : "2016",
          "url" : "https://www.udacity.com/course/javascript-basics--ud804"
     	},{
          "title": "Responsive Images",
@@ -90,7 +90,7 @@ var education = {
          "url" : "https://www.udacity.com/course/responsive-web-design-fundamentals--ud893"
     	},{
          "title": "Intro to HTML and CSS",
-         "school" : "HarvardX",
+         "school" : "Udacity",
          "dates" : "2015",	
          "url" : "https://www.udacity.com/course/intro-to-html-and-css--ud304"
     	},{
@@ -105,6 +105,19 @@ var education = {
          "dates" : "2015",
          "certificate" : "http://bit.ly/1REkhm4",
          "url" : "http://bit.ly/1McdTkf"
+    	}
+    ],
+     "certificate": [
+    	{
+         "title" : "CS50",
+         "school": "HarvardX",
+         "dates": "2016",
+         "url" : "https://s3.amazonaws.com/verify.edx.org/downloads/e537834617e64ec5841888ee26bc8957/Certificate.pdf"
+    	},{
+         "title" : "Python",
+         "school": "MITX",
+         "dates": "2015",
+         "url" : "https://s3.amazonaws.com/verify.edx.org/downloads/533701082c91490f99ea180f428ee25c/Certificate.pdf"
     	}
     ],
     "display" : "A function that displays the education section. It takes no parameters"
@@ -196,17 +209,16 @@ education.display = function displayEducation() {
 		$(".education-entry:last").append(formattedSchoolLocation);
 		$(".education-entry:last").append(formattedSchoolMajor);
 	}
-		$(".education-entry").append(HTMLonlineClasses);
+		$(".education-entry").append(HTMLonlineClassStart);
 
 	for(var classe in education.onlineClasses){
 		var formattedOnlineTitle = HTMLonlineTitle.replace("%data%", education.onlineClasses[classe].title);
+		formattedOnlineTitle = formattedOnlineTitle.replace("#", education.onlineClasses[classe].url);
 		var formattedOnlineSchool = HTMLonlineSchool.replace("%data%", education.onlineClasses[classe].school);
 		var formattedOnlineDates = HTMLonlineDates.replace("%data%", education.onlineClasses[classe].dates);
-		var formattedOnlineURL = HTMLonlineURL.replace("%data%", education.onlineClasses[classe].url).replace("#", education.onlineClasses[classe].url);
 		
-		$(".education-entry").append(formattedOnlineTitle + formattedOnlineSchool);
-		$(".education-entry").append(formattedOnlineDates);
-		$(".education-entry").append(formattedOnlineURL);
+		$(".class-entry:last").append(formattedOnlineTitle + formattedOnlineSchool);
+		$(".class-entry:last").append(formattedOnlineDates);
 	}
 }
 

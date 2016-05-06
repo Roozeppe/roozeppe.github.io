@@ -189,7 +189,7 @@ ul {
 }
   
 /* Styling the project section */
-#projects h2, #projects h4, #education h2, #education h4 {
+#projects h2, #projects h4, #education h2, #education h4, {
   display: inline;
 }
 
@@ -198,5 +198,19 @@ ul {
 }
 
 
+/* Styling online classes section */
+.class-entry {
+  margin-top: 15px;
+}
+
+.class-entry a:first-of-type {
+  display: inline;
+  float: right;
+  margin-top: 0;
+}
+
+.class-entry h3 {
+  display: inline;
+}
 
 
