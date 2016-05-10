@@ -79,7 +79,7 @@ function fbShare() {
 
 // Twitter pop-up function.
 function ttShare() {
-  window.open("https://twitter.com/intent/tweet?text=Check%20out%20my%20new%20web%20site&url=http://roozeppe.github.io/&hashtags=happycoding&via=roozeppejp", 
+  window.open("https://twitter.com/intent/tweet?text=Check%20out%20this%20new%20web%20site&url=http://roozeppe.github.io/&hashtags=happycoding&via=roozeppejp", 
     "_blank", "toolbar=yes,scrollbars=yes,resizable=yes,top=5,left=5,width=600,height=600");
 };
 
