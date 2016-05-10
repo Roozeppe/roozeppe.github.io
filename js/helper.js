@@ -1,31 +1,36 @@
 /*
-
-This file contains all of the code running in the background that makes resumeBuilder.js possible. We call these helper functions because they support your code in this course.
-
-Don't worry, you'll learn what's going on in this file throughout the course. You won't need to make any changes to it until you start experimenting with inserting a Google Map in Problem Set 3.
-
-Cameron Pittman
+This file contains all of the code running in the background that makes resumeBuilder.js possible. 
+We call these helper functions because they support your code in this course.
 */
 
-
-/*
-These are HTML strings. As part of the course, you'll be using JavaScript functions
-replace the %data% placeholder text you see in them.
-*/
-
-var HTMLheaderName = '<i class="fa fa-bars fa-fw fa-lg" id="menu"></i><i class="fa fa-home fa-fw fa-lg"></i><h1 id="name">%data%</h1>';
+var HTMLbioPic = '<img src="%data%" alt="Picture of a kitty">';
+var HTMLheaderName = '<h1 id="name">%data%</h1>';
 var HTMLheaderRole = '<h5 id="title">%data%</h5>';
-var HTMLbioPic = '<img src="%data%" class="biopic" alt="Selfie of myself inside my car">';
+
+
+var HTMLmobile = '<li><a href="#"><i class="fa fa-mobile fa-fw fa-lg fade"></i>%data%</a></li>';
+var HTMLlocation = '<li><a href="#" target="_blank"><i class="fa fa-map-marker fa-fw fa-lg fade"></i>%data%</a></li>';
+var HTMLemail = '<li><a href="#"><i class="fa fa-envelope-o fa-fw fa-lg fade"></i>%data%</a></li>';
+
+var HTMLfacebook = '<li><hr></li><li><a href="#" target="_blank"><i class="fa fa-facebook fa-fw fa-lg fa-lg"></i>Facebook</a></li>';
+var HTMLgplus = '<li><a href="#" target="_blank"><i class="fa fa-google-plus fa-fw fa-lg"></i>Google</a></li>';
+var HTMLtwitter = '<li><a href="#" target="_blank"><i class="fa fa-twitter fa-fw fa-lg"></i>Twitter</a></li>';
+var HTMLlinkedin = '<li><a href="#" target="_blank"><i class="fa fa-linkedin fa-fw fa-lg"></i>LinkedIn</a></li>';
+var HTMLgithub = '<li><a href="#" target="_blank"><i class="fa fa-github fa-fw fa-lg"></i>Github</a></li>';
+
+var HTMLprojects = '<li><hr></li><li><a href="#"><i class="fa fa-briefcase fa-fw fa-lg"></i>Projects</a></li>';
+var HTMLclasses = '<li><a href="#"><i class="fa fa-graduation-cap fa-fw fa-lg"></i>Online courses</a></li>';
+var HTMLcertificates = '<li><a href="#"><i class="fa fa-certificate fa-fw fa-lg"></i>Certificates</a></li>';
+
+var HTMLlanguageStart = '<li><hr></li><li><i class="fa fa-code fa-fw fa-lg fade"></i>Languages used</li><ul id="lang"></ul>';
+var HTMLlanguage = '<li class="tag">%data%</li>';
+var HTMLshareStart = '<li><i class="fa fa-share-alt fa-fw fa-lg fade"></i>Share this project</li><ul id="share"></ul>';
+var HTMLshareFB = '<i onclick=fbShare() class="fa fa-facebook fa-fw fa-lg fa-lg"></i>';
+var HTMLshareTT = '<i onclick=ttShare() class="fa fa-twitter fa-fw fa-lg fa-lg"></i>';
+var HTMLfork = '<li><a href="#" target="_blank"><i class="fa fa-code-fork fa-fw fa-lg fade"></i>Fork me on Github</a></li>';
+
 
 var HTMLcontactGeneric = '<li class="flex-item"><span class="orange-text">%contact%</span><span class="white-text">%data%</span></li>';
-var HTMLmobile = '<li class="flex-item"><span class="orange-text">mobile</span><span class="white-text">%data%</span></li>';
-var HTMLemail = '<li class="flex-item"><span class="orange-text">email</span><span class="white-text">%data%</span></li>';
-var HTMLtwitter = '<li class="flex-item"><a href="https://twitter.com/roozeppejp" class="zocial-twitter"></a></li>';
-var HTMLgithub = '<li class="flex-item"><span class="orange-text">github</span><span class="white-text">%data%</span></li>';
-var HTMLlinkedin = '<li class="flex-item"><span class="orange-text">linkedin</span><span class="white-text">%data%</span></li>';
-var HTMLblog = '<li class="flex-item"><span class="orange-text">blog</span><span class="white-text">%data%</span></li>';
-var HTMLlocation = '<li class="flex-item"><span class="orange-text">location</span><span class="white-text">%data%</span></li>';
-
 var HTMLwelcomeMsg = '<span class="welcome-message">%data%</span>';
 
 var HTMLskillsStart = '<h3 id="skills-h3">Skills at a Glance:</h3><ul id="skills" class="flex-box"></ul>';
@@ -57,13 +62,26 @@ var HTMLonlineSchool = ' - %data%</a>';
 var HTMLonlineDates = '<div class="date-text">%data%</div>';
 
 var HTMLcertificateStart = '<div class="cert-entry"><h3>Certifications</h3></div>';
-var HTMLcertTitle = '<a href="#">%data%</a>';
-var HTMLcertDates = '<div class="date-text">%data%</div>';
-var HTMLcertImage = '<img src="%data%" alt=Sapshot of my certification.'
+var HTMLcertTitle = '<a href="#">%data%';
+var HTMLcertDates = ' - %data%</a>';
+var HTMLcertSchool = '<h5>%data%</h5>';
+var HTMLcertImage = '<img src=%data% alt=Sapshot of my certification.'
 
 var internationalizeButton = '<button>Internationalize</button>';
 var googleMap = '<div id="map"></div>';
 
+
+// Facebook pop-up function.
+function fbShare() {
+  window.open("https://www.facebook.com/sharer/sharer.php?u=http://roozeppe.github.io/", 
+    "_blank", "toolbar=yes,scrollbars=yes,resizable=yes,top=5,left=5,width=600,height=600");
+};
+
+// Twitter pop-up function.
+function ttShare() {
+  window.open("https://twitter.com/intent/tweet?text=Check%20out%20my%20new%20web%20site&url=http://roozeppe.github.io/&hashtags=happycoding&via=roozeppejp", 
+    "_blank", "toolbar=yes,scrollbars=yes,resizable=yes,top=5,left=5,width=600,height=600");
+};
 
 /*
 The International Name challenge in Lesson 2 where you'll create a function that will need this helper code to run. 

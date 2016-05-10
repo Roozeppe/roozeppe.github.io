@@ -1,8 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <title>Roozeppe - Resume</title>
+
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+  <meta name="keywords" content="resume web development front-end web development.">
+  <meta name="description" content="This is my Front-end web development resume along with my projects.">
+  
+  <!-- Meta tags for facebook shared button -->
+  <meta property="og:url" content="http://roozeppe.github.io/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Check out my new website" />
+  <meta property="og:description" content="This is my resume website with some of my current projects. Enjoy!" />
+  <meta property="og:image" content="https://www.slalom.com/sites/default/files/blog-azure-machine-learning-1200x600.jpg" alt="Image of my website"/>
+  <meta name="byl" content='Roozeppe Jean Pierre' />
+
+  <!-- Meta tags for twitter shared button -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:creator" content="@roozeppejp" />
   
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
   <link href="css/style.css" rel="stylesheet">
@@ -11,42 +27,20 @@
   <script src="js/jQuery.js"></script>
   <script src="js/helper.js"></script>
   <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?libraries=places"></script>
-  
-  <title>Roozeppe - Resume</title>
 </head>
 <body>
   <nav class="nav">
+    <div id="nav-header"></div>
 
-    <div class="nav-header">
-      <img src="http://placekitten.com/150/150">
-      <h4>Roozeppe Jean Pierre</h4>
-      <h6>Front-end Web Developer</h6>
-    </div>
-
-    <ul>
-      <li><i class="fa fa-home fa-fw fa-lg"></i>Home</li>
-      <li><i class="fa fa-mobile fa-fw fa-lg fade"></i>646.363.5720</li>
-      <li><i class="fa fa-map-marker fa-fw fa-lg fade"></i>Hollywood, FL</li>
-      <li><i class="fa fa-envelope-o fa-fw fa-lg fade"></i>roozeppe.jp@gmail.com</li>
-      <li><hr></li>
-      <li><i class="fa fa-facebook fa-fw fa-lg fa-lg"></i>Facebook</li>
-      <li><i class="fa fa-google-plus fa-fw fa-lg"></i>Google</li>
-      <li><i class="fa fa-twitter fa-fw fa-lg"></i>Twitter</li>
-      <li><i class="fa fa-linkedin fa-fw fa-lg"></i>LinkedIn</li>
-      <li><i class="fa fa-github fa-fw fa-lg"></i>Github</li>
-      <li><hr></li>
-      <li><i class="fa fa-briefcase fa-fw fa-lg"></i>Projects</li>
-      <li><i class="fa fa-graduation-cap fa-fw fa-lg"></i>Online courses</li>
-      <li><i class="fa fa-certificate fa-fw fa-lg"></i>Degrees and Certificates</li>
-      <li><hr></li>
-      <li><i class="fa fa-code fa-fw fa-lg fade"></i>Languages used</li>
-      <li><i class="fa fa-share-alt fa-fw fa-lg fade"></i>Share this project</li>
-      <li><i class="fa fa-code-fork fa-fw fa-lg fade"></i>Fork me on Github</li>
+    <ul id="nav-contact">
+      <li><a href="/"><i class="fa fa-home fa-fw fa-lg"></i>Home</a></li>      
     </ul>
 
   </nav>
+
   <div id="main">
     <div id="header" class="center-content clear-fix">
+      <i class="fa fa-bars fa-fw fa-lg" id="menu"></i><i class="fa fa-home fa-fw fa-lg"></i>
       <h5 class="skills">SKILLS:</h5>
       <ul id="skills">
         <li>HTML 5</li>
@@ -54,6 +48,7 @@
         <li>JavaScript</li>
         <li>jQuery</li>
       </ul>
+
       <ul id="connect">
         <li><img src="images/facebook.svg" alt="facebook, media, online, social icon" width="48" height="48"></li>
         <li><img src="images/twitter.svg" alt="facebook, media, online, social icon" width="48" height="48"></li>
@@ -61,10 +56,13 @@
       </ul>
       <ul id="topContacts" class="flex-box"></ul>
     </div>
+
+
+
     <div style="clear: both"></div>
-    <div>
     <div id="workExperience" class="gray">
       <h2>Work Experience</h2>
+      <a href="#">MORE</a>
     </div>
     <div id="projects">
       <h2>Projects</h2>
@@ -78,11 +76,29 @@
     <div id="mapDiv">
       <h2>Where I've Lived and Worked</h2>
     </div>
+
     <div id="lets-connect" class="dark-gray">
       <h2 class="orange center-text">Let's Connect</h2>
-        <ul id="footerContacts" class="flex-box">
-      </ul>
-    </div>
+
+      <div class="footer-connect">
+        <ul>
+          <li><i class="fa fa-facebook fa-fw fa-lg fa-lg"></i>Facebook</li>
+          <li><i class="fa fa-google-plus fa-fw fa-lg"></i>Google</li>
+          <li><i class="fa fa-twitter fa-fw fa-lg"></i>Twitter</li>
+          <li><i class="fa fa-linkedin fa-fw fa-lg"></i>LinkedIn</li>
+          <li><i class="fa fa-github fa-fw fa-lg"></i>Github</li>
+        </ul>
+      </div>
+
+      <div class="footer-connect tabs">
+        <ul>
+          <li><i class="fa fa-briefcase fa-fw fa-lg"></i>Projects</li>
+          <li><i class="fa fa-graduation-cap fa-fw fa-lg"></i>Online courses</li>
+          <li><i class="fa fa-certificate fa-fw fa-lg"></i>Degrees and Certificates</li>
+        </ul>
+      </div>
+      <h5>made with love by Roozeppe</h5>
+
     </div>
 
   </div>
@@ -118,7 +134,7 @@
     */
 
 
-    if(document.getElementsByClassName('flex-item').length === 0) {
+    /*if(document.getElementsByClassName('flex-item').length === 0) {
       document.getElementById('topContacts').style.display = 'none';
     }
     if(document.getElementsByTagName('h1').length === 0) {
@@ -133,12 +149,12 @@
     if(document.getElementsByClassName('education-entry').length === 0) {
       document.getElementById('education').style.display = 'none';
     }
-    if(document.getElementsByClassName('flex-item').length === 0) {
-      document.getElementById('lets-connect').style.display = 'none';
-    }
+    //if(document.getElementsByClassName('flex-item').length === 0) {
+      //document.getElementById('lets-connect').style.display = 'none';
+    //}
     if(document.getElementById('map') === null) {
       document.getElementById('mapDiv').style.display = 'none';
-    }
+    }*/
 
     /*  Open the drawer when the menu icon is clicked.
         Prevent the body from scrolling when the side menu is open.

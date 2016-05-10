@@ -1,25 +1,33 @@
-/*
-This is empty on purpose! Your code to build the resume will go here.
- */
-
 // Populate JSON objects with data.
 
 var bio = {
+	"bioPic": "http://placekitten.com/150/150",
 	"name" : "Roozeppe Jean Pierre",
 	"role" : "Front-end Web Developer",
 	"contacts" : {
 		"mobile" : "646.363.5720",
+		"location" : "Hollywood, FL",
+		"location_url" : 'https://www.google.com/maps/place/Hollywood,+FL/',
 		"email" : "roozeppe.jp@gmail.com",
-		"twitter" : "@roozeppejp",
-		"github" : "roozeppejp",
-		"linkedin" : "roozeppejp",
-		"location" : "Hollywood, FL"
+		"facebook": "https://www.facebook.com/roozeppejp",
+		"gplus": "https://plus.google.com/105769142245784133825",
+		"twitter" : "https://twitter.com/roozeppejp",
+		"github" : "https://github.com/Roozeppe",
+		"linkedin" : "https://www.linkedin.com/in/roozeppejp"
 	},
-	"bioPic": "http://placekitten.com/150/150",
+	
 	"welcomeMsg" : "Thanks for checking out my resume!",
 	"skills" : ["Responsive web design", "HTML 5", "CSS 3", "JavaScript", "JSON", "Jquery", "Python"],
 	"display" : "A function that displays the bio section. It takes no parameters"
 };
+
+var links = {
+	"projects" : "http://roozeppe.github.io/under-construction",
+	"courses" : "http://roozeppe.github.io/under-construction",
+	"certificates" : "http://roozeppe.github.io/under-construction",
+};
+
+var languages = ["HTML5", "CSS3", "JS"];
 
 var work = {
 	"jobs" : [
@@ -107,62 +115,85 @@ var education = {
          "url" : "http://bit.ly/1McdTkf"
     	}
     ],
-     "certificate": [
+     "certification": [
     	{
          "title" : "CS50",
-         "school": "HarvardX",
          "dates": "2016",
+         "school": "HarvardX",
+         "img": "http://placekitten.com/150/150",
          "url" : "https://s3.amazonaws.com/verify.edx.org/downloads/e537834617e64ec5841888ee26bc8957/Certificate.pdf"
     	},{
          "title" : "Python",
-         "school": "MITX",
          "dates": "2015",
+         "school": "MITX",
+         "img": "http://placekitten.com/150/150",
          "url" : "https://s3.amazonaws.com/verify.edx.org/downloads/533701082c91490f99ea180f428ee25c/Certificate.pdf"
     	}
     ],
-    "display" : "A function that displays the education section. It takes no parameters"
+    "display" : "A function that displays the education section. It takes no parameters."
 };
 
 // The functions that display each section of the page.
 bio.display = function displayBio() {
+	var	formattedBioPic = HTMLbioPic.replace("%data%", bio.bioPic);
 	var formattedName = HTMLheaderName.replace("%data%", bio.name);
 	var formattedRole = HTMLheaderRole.replace("%data%", bio.role);
 
 	var formattedMobile = HTMLmobile.replace("%data%", bio.contacts.mobile);
-	var	formattedEmail = HTMLemail.replace("%data%", bio.contacts.email);
-	var	formattedTwitter = HTMLtwitter.replace("%data%", bio.contacts.twitter);
-	var	formattedGithub = HTMLgithub.replace("%data%", bio.contacts.github);
-	var	formattedLinkedin = HTMLlinkedin.replace("%data%", bio.contacts.linkedin);
 	var	formattedLocation = HTMLlocation.replace("%data%", bio.contacts.location);
+	formattedLocation = formattedLocation.replace("#", bio.contacts.location_url);
+	var	formattedEmail = HTMLemail.replace("%data%", bio.contacts.email);
 
-	var	formattedBioPic = HTMLbioPic.replace("%data%", bio.bioPic);
+	var	formattedFacebook = HTMLfacebook.replace("#", bio.contacts.facebook);
+	var	formattedGplus = HTMLgplus.replace("#", bio.contacts.gplus);
+	var	formattedTwitter = HTMLtwitter.replace("#", bio.contacts.twitter);
+	var	formattedLinkedin = HTMLlinkedin.replace("#", bio.contacts.linkedin);
+	var	formattedGithub = HTMLgithub.replace("#", bio.contacts.github);
+	
+	var formattedProjects = HTMLprojects.replace("#", links.projects);
+	var formattedClasses = HTMLclasses.replace("#", links.classes);
+	var formattedCertificates = HTMLcertificates.replace("#", links.classes);
+
+	// Create variables for the header.
 	var	formattedWelcomeMsg = HTMLwelcomeMsg.replace("%data%", bio.welcomeMsg);
+	var formattedFork = HTMLfork.replace("#", bio.contacts.github);
 
-	$("#header").prepend(formattedRole);
-	$("#header").prepend(formattedName);
-	
-	/*$("#header").append(formattedBioPic);
+	// Add data to side menu.
+	$("#nav-header").append(formattedBioPic);
+	$("#nav-header").append(formattedName);
+	$("#nav-header").append(formattedRole);
 
-	/*$("#topContacts").append(formattedMobile);
-	$("#topContacts").append(formattedEmail);
-	$("#topContacts").append(formattedTwitter);
-	$("#topContacts").append(formattedGithub);
-	$("#topContacts").append(formattedLinkedin);
-	$("#topContacts").append(formattedLocation);
+	$("#nav-contact").append(formattedMobile);
+	$("#nav-contact").append(formattedLocation);
+	$("#nav-contact").append(formattedEmail);
 
-	
-	$("#header").append(formattedWelcomeMsg);
+	$("#nav-contact").append(formattedFacebook);
+	$("#nav-contact").append(formattedGplus);
+	$("#nav-contact").append(formattedTwitter);
+	$("#nav-contact").append(formattedLinkedin);
+	$("#nav-contact").append(formattedGithub);
 
-	if (bio.skills.length > 0) {
-		bio.skills.sort(); //Sorting the skill set before using it.
-		$("#header").append(HTMLskillsStart);
+	$("#nav-contact").append(formattedProjects);
+	$("#nav-contact").append(formattedClasses);
+	$("#nav-contact").append(formattedCertificates);
 
-		for(skill in bio.skills) {
-			var	formattedSkills = HTMLskills.replace("%data%", bio.skills[skill]);
-			$("#skills").append(formattedSkills);
-		}
-	} */
-}
+	$("#nav-contact").append(HTMLlanguageStart);
+	$("#nav-contact").append(HTMLshareStart);
+	$("#share:last").append(HTMLshareFB);
+	$("#share:last").append(HTMLshareTT);
+	$("#nav-contact").append(formattedFork);
+
+	// Add data to side menu language set used on this project.
+	for (lang in languages) {
+		var formattedLanguage = HTMLlanguage.replace("%data%", languages[lang]);
+
+		$("#lang:last").append(formattedLanguage);
+	};
+
+	// Add data to header.
+	$(".skills").before(formattedName);
+	$(".skills").before(formattedRole);
+};
 
 work.display = function displayWork() {
 	for(var job in work.jobs){
@@ -196,20 +227,22 @@ projects.display = function displayProjects() {
 }
 
 education.display = function displayEducation() {
+	$("#education").append(HTMLschoolStart);
+
 	for(var school in education.schools){
 		var formattedSchoolName = HTMLschoolName.replace("%data%", education.schools[school].name);
 		var formattedSchoolDegree = HTMLschoolDegree.replace("%data%", education.schools[school].degree);
 		var formattedSchoolDates = HTMLschoolDates.replace("%data%", education.schools[school].dates);
 		var formattedSchoolLocation = HTMLschoolLocation.replace("%data%", education.schools[school].location);
 		var formattedSchoolMajor = HTMLschoolMajor.replace("%data%", education.schools[school].majors);
-
-		$("#education").append(HTMLschoolStart);
+		
 		$(".education-entry:last").append(formattedSchoolName + formattedSchoolDegree);
 		$(".education-entry:last").append(formattedSchoolDates);
 		$(".education-entry:last").append(formattedSchoolLocation);
 		$(".education-entry:last").append(formattedSchoolMajor);
-	}
-		$(".education-entry").append(HTMLonlineClassStart);
+	};
+		
+	$("#education").append(HTMLonlineClassStart);
 
 	for(var classe in education.onlineClasses){
 		var formattedOnlineTitle = HTMLonlineTitle.replace("%data%", education.onlineClasses[classe].title);
@@ -219,6 +252,17 @@ education.display = function displayEducation() {
 		
 		$(".class-entry:last").append(formattedOnlineTitle + formattedOnlineSchool);
 		$(".class-entry:last").append(formattedOnlineDates);
+	};
+
+	$("#education").append(HTMLcertificateStart);
+	for(var cert in education.certification) {
+		var formattedCertTitle = HTMLcertTitle.replace("%data%", education.certification[cert].title);
+		var formattedCertDate = HTMLcertDates.replace("%data%", education.certification[cert].dates);
+		var formattedCertSchool = HTMLcertSchool.replace("%data%", education.certification[cert].school);
+		var formattedCertImg = HTMLcertImage.replace("%data%", education.certification[cert].img);
+		
+		$(".cert-entry:last").append(formattedCertTitle + formattedCertDate);
+		$(".cert-entry:last").append(formattedCertSchool);
 	}
 }
 
