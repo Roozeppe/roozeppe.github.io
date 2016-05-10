@@ -25,6 +25,7 @@ var links = {
 	"projects" : "http://roozeppe.github.io/under-construction",
 	"courses" : "http://roozeppe.github.io/under-construction",
 	"certificates" : "http://roozeppe.github.io/under-construction",
+	"github" : "https://github.com/Roozeppe/roozeppe.github.io"
 };
 
 var languages = ["HTML5", "CSS3", "JS"];
@@ -156,7 +157,7 @@ bio.display = function displayBio() {
 
 	// Create variables for the header.
 	var	formattedWelcomeMsg = HTMLwelcomeMsg.replace("%data%", bio.welcomeMsg);
-	var formattedFork = HTMLfork.replace("#", bio.contacts.github);
+	var formattedFork = HTMLfork.replace("#", links.github);
 
 	// Add data to side menu.
 	$("#nav-header").append(formattedBioPic);
