@@ -52,19 +52,19 @@ var work = {
 var projects = {
 	"projects" : [
 		{
-	    "title" : "Responsive Images",
+	    "title" : "Grayscale",
 	    "dates" : "2016",
-	    "description" : [
-	    	"Display eight pictures on a single page, with responsive technics that allows the browser to choose,",
-	    	"and render the best picture to display according to the screen resolution,",
-	    	"the size of the viewport width and device pixel ratio (DPI)."
-	    ].join(" "),
-	    "images" : "http://placehold.it/225x225"
+	    "description" : "Grayscaling images",
+	    "images" : "images/grayscale.jpg",
+	    "img_alt" : "A grayscale image",
+	    "fn" : "grayscale_page()"
 		},{
-	    "title" : "Responsive Web Design",
+	    "title" : "Meme maker",
 	    "dates" : "2016",
-	    "description" : "A very simple website that response accordingly to different screen resolution, and devices.",
-	    "images" : "http://placehold.it/225x225"
+	    "description" : "Make memes online for free.",
+	    "images" : "images/meme.jpg",
+	    "img_alt" : "A grayscale image",
+	    "fn" : "meme_page()"
 		}
 	],
 	"display" : "A function that displays the projects section. It takes no parameters"
@@ -214,16 +214,18 @@ work.display = function displayWork() {
 
 projects.display = function displayProjects() {
 	for(var project in projects.projects){
+		var formattedProjectStart = HTMLprojectStart.replace("%fn%", projects.projects[project].fn)
 		var formattedProjectTitle = HTMLprojectTitle.replace("%data%", projects.projects[project].title);
 		var formattedProjectDates = HTMLprojectDates.replace("%data%", projects.projects[project].dates);
 		var formattedProjectDescription = HTMLprojectDescription.replace("%data%", projects.projects[project].description);	
 		var formattedProjectImage = HTMLprojectImage.replace("%data%", projects.projects[project].images);
 
-		$("#projects").append(HTMLprojectStart);
-		$(".project-entry:last").append(formattedProjectTitle);
-		$(".project-entry:last").append(formattedProjectDates);
-		$(".project-entry:last").append(formattedProjectDescription);
-		$(".project-entry:last").append(formattedProjectImage);
+		$(".carousel-inner").append(formattedProjectStart);
+		$(".item:last").append(formattedProjectImage);
+		$(".item:last").append(HTMLcarouselStart);
+		$(".carousel-caption:last").append(formattedProjectTitle);
+		$(".carousel-caption:last").append(formattedProjectDescription);
+		$(".carousel-caption:last").append(formattedProjectDates);
 	}
 }
 

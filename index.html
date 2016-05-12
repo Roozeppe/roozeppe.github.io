@@ -13,14 +13,19 @@
   <meta property="og:type" content="website" />
   <meta property="og:title" content="Check out this new website" />
   <meta property="og:description" content="This is my resume website with some of my current projects. Enjoy!" />
-  <meta property="og:image" content="https://www.slalom.com/sites/default/files/blog-azure-machine-learning-1200x600.jpg" alt="Image of my website"/>
-  <meta name="byl" content='Roozeppe Jean Pierre' />
+  <meta property="og:image" content="https://raw.githubusercontent.com/Roozeppe/meme-maker/master/meme.jpeg" alt="Image of my website"/>
+
+  <meta name="byl" content='Roozeppe JP' />
 
   <!-- Meta tags for twitter shared button -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:creator" content="@roozeppejp" />
   
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
   <link href="css/style.css" rel="stylesheet">
   <link href="css/responsive.css" rel="stylesheet">
 
@@ -57,17 +62,48 @@
       <ul id="topContacts" class="flex-box"></ul>
     </div>
 
-
-
     <div style="clear: both"></div>
     <div id="workExperience" class="gray">
       <h2>Work Experience</h2>
       <a href="#">MORE</a>
     </div>
-    <div id="projects">
-      <h2>Projects</h2>
-      <a href="#">MORE</a>
-    </div>
+      <div class="container" id="projects">
+        <h2>Projects</h2>
+        <a href="#">MORE</a>
+        <br>
+        <div id="myCarousel" class="carousel slide" data-ride="carousel">
+          <!-- Indicators -->
+          <ol class="carousel-indicators">
+            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+            <li data-target="#myCarousel" data-slide-to="1"></li>
+            <li data-target="#myCarousel" data-slide-to="2"></li>
+          </ol>
+
+          <!-- Wrapper for slides -->
+          <div class="carousel-inner" role="listbox">
+
+          <div class="item active" onclick="frog_page()">
+            <img src="images/frog.jpg" alt="Snap shot of the frog game" width="460" height="345">
+            <div class="carousel-caption">
+              <h5>Frog</h5>
+              <p>Simple HTML5 canvas game</p>
+              <p>2016</p>
+            </div>
+          </div>
+      
+      </div>
+
+    <!-- Left and right controls -->
+    <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+      <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  </div>
+</div>
 
     <div id="education" class="gray">
       <h2>Education</h2>

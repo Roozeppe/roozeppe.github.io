@@ -7,7 +7,6 @@ var HTMLbioPic = '<img src="%data%" alt="Picture of a kitty">';
 var HTMLheaderName = '<h1 id="name">%data%</h1>';
 var HTMLheaderRole = '<h5 id="title">%data%</h5>';
 
-
 var HTMLmobile = '<li><a href="#"><i class="fa fa-mobile fa-fw fa-lg fade"></i>%data%</a></li>';
 var HTMLlocation = '<li><a href="#" target="_blank"><i class="fa fa-map-marker fa-fw fa-lg fade"></i>%data%</a></li>';
 var HTMLemail = '<li><a href="#"><i class="fa fa-envelope-o fa-fw fa-lg fade"></i>%data%</a></li>';
@@ -30,7 +29,7 @@ var HTMLshareTT = '<i onclick=ttShare() class="fa fa-twitter fa-fw fa-lg fa-lg">
 var HTMLfork = '<li><a href="#" target="_blank"><i class="fa fa-code-fork fa-fw fa-lg fade"></i>Fork me on Github</a></li>';
 
 
-var HTMLcontactGeneric = '<li class="flex-item"><span class="orange-text">%contact%</span><span class="white-text">%data%</span></li>';
+//var HTMLcontactGeneric = '<li class="flex-item"><span class="orange-text">%contact%</span><span class="white-text">%data%</span></li>';
 var HTMLwelcomeMsg = '<span class="welcome-message">%data%</span>';
 
 var HTMLskillsStart = '<h3 id="skills-h3">Skills at a Glance:</h3><ul id="skills" class="flex-box"></ul>';
@@ -43,11 +42,13 @@ var HTMLworkDates = '<div class="date-text">%data%</div>';
 var HTMLworkLocation = '<div class="location-text">%data%</div>';
 var HTMLworkDescription = '<p><br>%data%</p>';
 
-var HTMLprojectStart = '<div class="project-entry"></div>';
-var HTMLprojectTitle = '<a href="#">%data%</a>';
-var HTMLprojectDates = '<div class="date-text">%data%</div>';
-var HTMLprojectDescription = '<p><br>%data%</p>';
-var HTMLprojectImage = '<img src="%data%" alt="Snapshot of my responsive images project.">';
+var HTMLprojectStart = '<div class="item" onclick="%fn%"></div>';
+var HTMLprojectImage = '<img src="%data%" alt="Chania" width="460" height="345">';
+var HTMLcarouselStart = '<div class="carousel-caption"></div>';
+var HTMLprojectTitle = '<h5>%data%</h5>';
+var HTMLprojectDescription = '<p>%data%</p>';
+var HTMLprojectDates = '<p>%data%</p>';
+
 
 var HTMLschoolStart = '<div class="education-entry"></div>';
 var HTMLschoolName = '<a href="#">%data%';
@@ -82,6 +83,19 @@ function ttShare() {
   window.open("https://twitter.com/intent/tweet?text=Check%20out%20this%20new%20web%20site&url=http://roozeppe.github.io/&hashtags=happycoding&via=roozeppejp", 
     "_blank", "toolbar=yes,scrollbars=yes,resizable=yes,top=5,left=5,width=600,height=600");
 };
+
+// Project pages functions.
+function frog_page () {
+  window.open("http://roozeppe.github.io/frontend-nanodegree-arcade-game/")
+};
+
+function grayscale_page () {
+  window.open("http://roozeppe.github.io/grayscale/")
+};
+
+function meme_page () {
+  window.open("http://roozeppe.github.io/meme-maker/")
+}
 
 /*
 The International Name challenge in Lesson 2 where you'll create a function that will need this helper code to run. 
