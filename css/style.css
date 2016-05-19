@@ -1,5 +1,11 @@
+div {
+  width: 100%;
+}
+
 body {
-  background-color: rgba(204, 204, 204, 0.66);;
+  width: 100%;
+  max-width: 100%;
+  background-color: rgba(204, 204, 204, 0.66);
 }
 
 /* Styling side menu */
