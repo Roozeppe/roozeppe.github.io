@@ -1,7 +1,7 @@
 // Populate JSON objects with data.
 
 var bio = {
-	"bioPic": "http://placekitten.com/150/150",
+	"bioPic": "images/me.jpg",
 	"name" : "Roozeppe Jean Pierre",
 	"role" : "Front-end Web Developer",
 	"contacts" : {
@@ -150,8 +150,8 @@ bio.display = function displayBio() {
 	var	formattedGithub = HTMLgithub.replace("#", bio.contacts.github);
 	
 	var formattedProjects = HTMLprojects.replace("#", links.projects);
-	var formattedClasses = HTMLclasses.replace("#", links.classes);
-	var formattedCertificates = HTMLcertificates.replace("#", links.classes);
+	var formattedClasses = HTMLclasses.replace("#", links.courses);
+	var formattedCertificates = HTMLcertificates.replace("#", links.certificates);
 
 	// Create variables for the header.
 	var formattedFork = HTMLfork.replace("#", links.github);
@@ -275,6 +275,7 @@ education.display = function displayEducation() {
 	$("#education").append(HTMLcertificateStart);
 	for(var cert in education.certification) {
 		var formattedCertTitle = HTMLcertTitle.replace("%data%", education.certification[cert].title);
+		formattedCertTitle = formattedCertTitle.replace("#", education.certification[cert].url);
 		var formattedCertDate = HTMLcertDates.replace("%data%", education.certification[cert].dates);
 		var formattedCertSchool = HTMLcertSchool.replace("%data%", education.certification[cert].school);
 		var formattedCertImg = HTMLcertImage.replace("%data%", education.certification[cert].img);

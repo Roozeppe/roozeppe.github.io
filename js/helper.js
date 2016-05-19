@@ -7,9 +7,9 @@ var HTMLbioPic = '<img src="%data%" alt="Picture of a kitty">';
 var HTMLheaderName = '<h1 id="name">%data%</h1>';
 var HTMLheaderRole = '<h5 id="title">%data%</h5>';
 
-var HTMLmobile = '<li><a href="#"><i class="fa fa-mobile fa-fw fa-lg fading"></i>%data%</a></li>';
+var HTMLmobile = '<li><a><i class="fa fa-mobile fa-fw fa-lg fading"></i>%data%</a></li>';
 var HTMLlocation = '<li><a href="#" target="_blank"><i class="fa fa-map-marker fa-fw fa-lg fading"></i>%data%</a></li>';
-var HTMLemail = '<li><a href="#"><i class="fa fa-envelope-o fa-fw fa-lg fading"></i>%data%</a></li>';
+var HTMLemail = '<li><a><i class="fa fa-envelope-o fa-fw fa-lg fading"></i>%data%</a></li>';
 
 var HTMLfacebook = '<li><hr></li><li><a href="#" target="_blank"><i class="fa fa-facebook fa-fw fa-lg fa-lg"></i>Facebook</a></li>';
 var HTMLgplus = '<li><a href="#" target="_blank"><i class="fa fa-google-plus fa-fw fa-lg"></i>Google</a></li>';
@@ -61,7 +61,7 @@ var HTMLschoolDates = '<div class="date-text">%data%</div>';
 var HTMLschoolLocation = '<div class="location-text">%data%</div>';
 var HTMLschoolMajor = '<em><br>Major: %data%</em>';
 
-var HTMLonlineClassStart = '<div class="class-entry"><h3>Online Classes</h3><a href="#">MORE</a></div>';
+var HTMLonlineClassStart = '<div class="class-entry"><h3>Online Classes</h3><a href="http://roozeppe.github.io/under-construction/">MORE</a></div>';
 var HTMLonlineTitle = '<a href="#" target="_blank">%data%';
 var HTMLonlineSchool = ' - %data%</a>';
 var HTMLonlineDates = '<div class="date-text">%data%</div>';
