@@ -1,7 +1,7 @@
 // Populate JSON objects with data.
 
 var bio = {
-	"bioPic": "http://placekitten.com/150/150",
+	"bioPic": "images/me.jpg",
 	"name" : "Roozeppe Jean Pierre",
 	"role" : "Front-end Web Developer",
 	"contacts" : {

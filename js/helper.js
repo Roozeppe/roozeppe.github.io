@@ -3,7 +3,7 @@ This file contains all of the code running in the background that makes resumeBu
 We call these helper functions because they support your code in this course.
 */
 
-var HTMLbioPic = '<img src="%data%" alt="Picture of a kitty">';
+var HTMLbioPic = '<img src="%data%" alt="Picture of me">';
 var HTMLheaderName = '<h1 id="name">%data%</h1>';
 var HTMLheaderRole = '<h5 id="title">%data%</h5>';
 
