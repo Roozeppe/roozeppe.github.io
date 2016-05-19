@@ -7,9 +7,9 @@ var HTMLbioPic = '<img src="%data%" alt="Picture of a kitty">';
 var HTMLheaderName = '<h1 id="name">%data%</h1>';
 var HTMLheaderRole = '<h5 id="title">%data%</h5>';
 
-var HTMLmobile = '<li><a href="#"><i class="fa fa-mobile fa-fw fa-lg fade"></i>%data%</a></li>';
-var HTMLlocation = '<li><a href="#" target="_blank"><i class="fa fa-map-marker fa-fw fa-lg fade"></i>%data%</a></li>';
-var HTMLemail = '<li><a href="#"><i class="fa fa-envelope-o fa-fw fa-lg fade"></i>%data%</a></li>';
+var HTMLmobile = '<li><a href="#"><i class="fa fa-mobile fa-fw fa-lg fading"></i>%data%</a></li>';
+var HTMLlocation = '<li><a href="#" target="_blank"><i class="fa fa-map-marker fa-fw fa-lg fading"></i>%data%</a></li>';
+var HTMLemail = '<li><a href="#"><i class="fa fa-envelope-o fa-fw fa-lg fading"></i>%data%</a></li>';
 
 var HTMLfacebook = '<li><hr></li><li><a href="#" target="_blank"><i class="fa fa-facebook fa-fw fa-lg fa-lg"></i>Facebook</a></li>';
 var HTMLgplus = '<li><a href="#" target="_blank"><i class="fa fa-google-plus fa-fw fa-lg"></i>Google</a></li>';
@@ -21,19 +21,23 @@ var HTMLprojects = '<li><hr></li><li><a href="#"><i class="fa fa-briefcase fa-fw
 var HTMLclasses = '<li><a href="#"><i class="fa fa-graduation-cap fa-fw fa-lg"></i>Online courses</a></li>';
 var HTMLcertificates = '<li><a href="#"><i class="fa fa-certificate fa-fw fa-lg"></i>Certificates</a></li>';
 
-var HTMLlanguageStart = '<li><hr></li><li><i class="fa fa-code fa-fw fa-lg fade"></i>Languages used</li><ul id="lang"></ul>';
+var HTMLlanguageStart = '<li><hr></li><li><i class="fa fa-code fa-fw fa-lg fading"></i>Languages used</li><ul id="lang"></ul>';
 var HTMLlanguage = '<li class="tag">%data%</li>';
-var HTMLshareStart = '<li><i class="fa fa-share-alt fa-fw fa-lg fade"></i>Share this project</li><ul id="share"></ul>';
+var HTMLshareStart = '<li><i class="fa fa-share-alt fa-fw fa-lg fading"></i>Share this project</li><ul id="share"></ul>';
 var HTMLshareFB = '<i onclick=fbShare() class="fa fa-facebook fa-fw fa-lg fa-lg"></i>';
 var HTMLshareTT = '<i onclick=ttShare() class="fa fa-twitter fa-fw fa-lg fa-lg"></i>';
-var HTMLfork = '<li><a href="#" target="_blank"><i class="fa fa-code-fork fa-fw fa-lg fade"></i>Fork me on Github</a></li>';
+var HTMLfork = '<li><a href="#" target="_blank"><i class="fa fa-code-fork fa-fw fa-lg fading"></i>Fork me on Github</a></li>';
 
 
 //var HTMLcontactGeneric = '<li class="flex-item"><span class="orange-text">%contact%</span><span class="white-text">%data%</span></li>';
-var HTMLwelcomeMsg = '<span class="welcome-message">%data%</span>';
+//var HTMLwelcomeMsg = '<span class="welcome-message">%data%</span>';
 
 var HTMLskillsStart = '<h3 id="skills-h3">Skills at a Glance:</h3><ul id="skills" class="flex-box"></ul>';
 var HTMLskills = '<li class="flex-item"><span class="white-text">%data%</span></li>';
+
+var HeaderFacebook = '<li><a href="#" target="_blank"><img src="images/facebook.svg" alt="facebook social icon" width="48" height="48"></a></li>';
+var HeaderTwitter = '<li><a href="#" target="_blank"><img src="images/twitter.svg" alt="twitter social icon" width="48" height="48"></a></li>';
+var HeaderLinkedin = '<li><a href="#" target="_blank"><img src="images/linked_in.svg" alt="linkedin social icon" width="48" height="48"></a></li>';
 
 var HTMLworkStart = '<div class="work-entry"></div>';
 var HTMLworkEmployer = '<a href="#">%data%';
@@ -58,12 +62,12 @@ var HTMLschoolLocation = '<div class="location-text">%data%</div>';
 var HTMLschoolMajor = '<em><br>Major: %data%</em>';
 
 var HTMLonlineClassStart = '<div class="class-entry"><h3>Online Classes</h3><a href="#">MORE</a></div>';
-var HTMLonlineTitle = '<a href="#">%data%';
+var HTMLonlineTitle = '<a href="#" target="_blank">%data%';
 var HTMLonlineSchool = ' - %data%</a>';
 var HTMLonlineDates = '<div class="date-text">%data%</div>';
 
 var HTMLcertificateStart = '<div class="cert-entry"><h3>Certifications</h3></div>';
-var HTMLcertTitle = '<a href="#">%data%';
+var HTMLcertTitle = '<a href="#" target="_blank">%data%';
 var HTMLcertDates = ' - %data%</a>';
 var HTMLcertSchool = '<h5>%data%</h5>';
 var HTMLcertImage = '<img src=%data% alt=Sapshot of my certification.'
@@ -80,7 +84,7 @@ function fbShare() {
 
 // Twitter pop-up function.
 function ttShare() {
-  window.open("https://twitter.com/intent/tweet?text=Check%20out%20this%20new%20web%20site&url=http://roozeppe.github.io/&hashtags=happycoding&via=roozeppejp", 
+  window.open("https://twitter.com/intent/tweet?text=Check%20out%20Roozeppe's%20Resume&url=http://roozeppe.github.io/&hashtags=happycoding&via=roozeppejp", 
     "_blank", "toolbar=yes,scrollbars=yes,resizable=yes,top=5,left=5,width=600,height=600");
 };
 

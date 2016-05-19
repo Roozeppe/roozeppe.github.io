@@ -1,12 +1,34 @@
 @media screen and (min-width: 801px) {
-  .nav {
-    display: none;
-  }
   .fa-bars {
     visibility: hidden;
   }
+  .nav.menu {
+    -webkit-transform: translate(0, 0);
+    transform: translate(0, 0);
+    max-width: 260px;
+    position: fixed;
+  }
+  #main, #connect {
+    max-width: 740px;
+    width: 70%
+  }
+  #main {
+    margin-left: 260px;
+  }
+  .container {
+    width: 100%;
+  }
 }
 
+@media screen and (min-width: 1000px) {
+   #main {
+    margin-left: calc((100% - 480px)/2);
+  }
+
+  .nav.menu {
+    margin-left: calc((100% - 1000px)/2);
+  }
+}
 
 /*
 ** Styling the navigation side menu and hamburger icon.
@@ -129,25 +151,3 @@ ul {
   margin-top: 20px;
 }
 
-/* Styling the foot of the page. */
-#lets-connect {
-  width: 100%;
-  height: 500px;
-}
-
-.footer-connect {
-  width: 50%;
-  display: inline-block;
-}
-
-.tabs {
-  float: right;
-}
-
-.footer-connect li {
-  margin-top: 20px;
-}
-
-.footer-connect i {
-  margin-right: 10px;
-}

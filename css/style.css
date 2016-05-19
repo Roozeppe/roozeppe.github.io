@@ -1,3 +1,7 @@
+body {
+  background-color: rgba(204, 204, 204, 0.66);;
+}
+
 /* Styling side menu */
 #lang {
   margin-left: 80px;
@@ -35,7 +39,7 @@
   width: 20px;
 }
 
-.fade {
+.fading {
   color: gray;
 }
 
@@ -79,6 +83,13 @@
 }
 
 /* Styling the header */
+#header {
+  background-color: #66b3ff;
+  height: 262px;
+  padding-bottom: 0;
+  padding-top: 0;
+}
+
 #name {
   font-size: 1.4em;
   display: block;
@@ -97,14 +108,14 @@
 }
 
 #connect {
-  margin-top: 95px;
+  margin-top: 103px;
   width: 100%;
   text-align: center;
   position: absolute;
   z-index: 5;
 }
 
-#connect li {
+#connect a, #connect li {
   display: inline;
 }
 
@@ -121,7 +132,8 @@
 }
 
 #projects {
-  margin-top: 60px;
+  padding-top: 60px;
+  background-color: white;
 }
 
 #projects a, #projects h2 {
@@ -145,6 +157,48 @@
   text-align: left;
   color: blue;
   padding-left: 20px;
+}
+
+/* Styling education section */
+#education a, .container a {
+  color: #66b3ff;
+}
+
+/* Styling the footer */
+/* Styling the foot of the page. */
+#lets-connect {
+  width: 100%;
+  height: 330px;
+  padding: 0;
+}
+
+#lets-connect span {
+  color: red;
+}
+
+.footer-connect {
+  width: 50%;
+  display: inline-block;
+  text-align: left;
+  padding-left: 60px;
+  margin-bottom: 20px;
+}
+
+.col_0 {
+  border-right: 2px solid rgba(51, 51, 51, 0.24);
+}
+
+.tab {
+  float: right;
+  padding-left: 20px;
+}
+
+.footer-connect li {
+  margin-top: 20px;
+}
+
+.footer-connect i {
+  margin-right: 10px;
 }
 
 body,
@@ -272,10 +326,6 @@ a {
   display: none;
 }
 
-.orange {
-  background-color: #f5ae23;
-}
-
 .orange-text {
   color: #f5ae23;
 }
@@ -295,11 +345,8 @@ a {
   background-color: #4a4a4a;
 }
 
-#header {
-  background-color: #484848;
-  height: 262px;
-  padding-bottom: 0;
-  padding-top: 0;
+.blue {
+  background-color: #66b3ff;
 }
 
 .flex-box {
@@ -366,13 +413,14 @@ span {
 #map {
   display: block;
   height: 100%;
-  margin: 0 5%;
+  width: 100%;
 }
 
 #mapDiv {
   height: 400px;
   width: 100%;
   padding-bottom: 5%;
+  background-color: white;
 }
 
 @media only screen and (min-width: 750px) {

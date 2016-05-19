@@ -15,8 +15,6 @@ var bio = {
 		"github" : "https://github.com/Roozeppe",
 		"linkedin" : "https://www.linkedin.com/in/roozeppejp"
 	},
-	
-	"welcomeMsg" : "Thanks for checking out my resume!",
 	"skills" : ["Responsive web design", "HTML 5", "CSS 3", "JavaScript", "JSON", "Jquery", "Python"],
 	"display" : "A function that displays the bio section. It takes no parameters"
 };
@@ -156,8 +154,10 @@ bio.display = function displayBio() {
 	var formattedCertificates = HTMLcertificates.replace("#", links.classes);
 
 	// Create variables for the header.
-	var	formattedWelcomeMsg = HTMLwelcomeMsg.replace("%data%", bio.welcomeMsg);
 	var formattedFork = HTMLfork.replace("#", links.github);
+	var formattedHeaderFB = HeaderFacebook.replace("#", bio.contacts.facebook);
+	var formattedHeaderTT = HeaderTwitter.replace("#", bio.contacts.twitter);
+	var formattedHeaderLI = HeaderLinkedin.replace("#", bio.contacts.linkedin);
 
 	// Add data to side menu.
 	$("#nav-header").append(formattedBioPic);
@@ -194,6 +194,21 @@ bio.display = function displayBio() {
 	// Add data to header.
 	$(".skills").before(formattedName);
 	$(".skills").before(formattedRole);
+
+	$("#connect:last").append(formattedHeaderFB);
+	$("#connect:last").append(formattedHeaderTT);
+	$("#connect:last").append(formattedHeaderLI);
+
+	// Add data to footer.
+	$(".col_0:last").append(formattedFacebook);
+	$(".col_0:last").append(formattedGplus);
+	$(".col_0:last").append(formattedTwitter);
+	$(".col_0:last").append(formattedLinkedin);
+	$(".col_0:last").append(formattedGithub);
+
+	$(".col_1:last").append(formattedProjects);
+	$(".col_1:last").append(formattedClasses);
+	$(".col_1:last").append(formattedCertificates);
 };
 
 work.display = function displayWork() {
