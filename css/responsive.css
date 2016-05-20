@@ -7,7 +7,13 @@
     transform: translate(0, 0);
     max-width: 260px;
     position: fixed;
+    overflow: auto;
   }
+
+  #side_menu {
+    overflow: auto;
+  }
+
   #main, #connect {
     max-width: 740px;
     width: 70%
@@ -24,7 +30,7 @@
   #nav-header img {
     margin-top: 50px;
   }
-}
+} 
 
 @media screen and (min-width: 1000px) {
    #main {
@@ -58,7 +64,6 @@
   width: 85%;
   max-width: 380px;
   height: 100%;
-  overflow-y: auto;
   position: absolute;
 
   /* This trasform moves the drawer off canvas. */
