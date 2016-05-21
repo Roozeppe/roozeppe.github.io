@@ -7,11 +7,6 @@
     transform: translate(0, 0);
     max-width: 260px;
     position: fixed;
-    overflow: auto;
-  }
-
-  #side_menu {
-    overflow: auto;
   }
 
   #main, #connect {
@@ -65,6 +60,7 @@
   max-width: 380px;
   height: 100%;
   position: absolute;
+  overflow-y: scroll;
 
   /* This trasform moves the drawer off canvas. */
   -webkit-transform: translate(-800px, 0);
